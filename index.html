@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毋喆祥 - 市场营销经理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#87CEFA',
+                        secondary: '#C5E767',
+                        neutral: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        title: ['"Microsoft YaHei"', 'sans-serif'],
+                        body: ['SimSun', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .transition-transform-opacity {
+                transition-property: transform, opacity;
+            }
+            .hover-lift {
+                @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+            }
+        }
+    </style>
+</head>
+<body class="font-body bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full bg-white/90 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="font-title font-bold text-primary text-xl">毋喆祥</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#about" class="text-gray-600 hover:text-primary transition-colors duration-300">关于我</a>
+                        <a href="#experience" class="text-gray-600 hover:text-primary transition-colors duration-300">专业经历</a>
+                        <a href="#skills" class="text-gray-600 hover:text-primary transition-colors duration-300">技能</a>
+                        <a href="#projects" class="text-gray-600 hover:text-primary transition-colors duration-300">项目展示</a>
+                        <a href="#education" class="text-gray-600 hover:text-primary transition-colors duration-300">教育背景</a>
+                        <a href="#contact" class="text-gray-600 hover:text-primary transition-colors duration-300">联系方式</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-primary">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">关于我</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">专业经历</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">技能</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">项目展示</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">教育背景</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-primary hover:bg-gray-50">联系方式</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首屏展示 -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/90 to-primary">
+        <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1025/1920/1080')] bg-cover bg-center opacity-20"></div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="font-title font-bold text-[clamp(2.5rem,6vw,4rem)] text-white mb-4 leading-tight text-shadow">
+                    毋喆祥
+                </h1>
+                <p class="font-title text-[clamp(1.25rem,3vw,1.75rem)] text-white/90 mb-8">
+                    市场营销经理
+                </p>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/80 mb-10 max-w-2xl mx-auto">
+                    拥有丰富的市场营销经验，擅长策划并执行线上营销活动，数据分析驱动决策，提升品牌影响力与销售业绩。
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1">
+                        联系我
+                    </a>
+                    <a href="#experience" class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full font-medium transition-all duration-300">
+                        了解更多
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/80 hover:text-white">
+                <i class="fa-solid fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 关于我 -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="font-title font-bold text-[clamp(1.75rem,4vw,2.5rem)] text-gray-800 mb-4">关于我</h2>
+                        <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-full h-full border-4 border-primary rounded-lg opacity-30"></div>
+                            <img src="https://picsum.photos/id/1012/600/600" alt="毋喆祥" class="w-full h-auto rounded-lg shadow-xl relative z-10 hover-lift">
+                        </div>
+                        <div>
+                            <h3 class="font-title font-bold text-2xl text-gray-800 mb-6">你好，我是毋喆祥</h3>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                我是一名拥有5年市场营销经验的专业人士，专注于数字营销与品牌推广。我擅长将数据分析与创意策略相结合，为企业带来可衡量的业务增长。
+                            </p>
+                            <p class="text-gray-700 mb-6 leading-relaxed">
+                                我拥有北京大学MBA学位和上海交通大学市场营销学士学位，具备扎实的商业管理与营销理论基础。在ABC科技和XYZ广告的工作经历让我积累了丰富的实战经验，能够独立策划并执行完整的营销方案。
+                            </p>
+                            <div class="grid grid-cols-2 gap-4 mb-8">
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-envelope text-primary mr-3"></i>
+                                    <span>wuzhexiang@email.com</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-phone text-primary mr-3"></i>
+                                    <span>+86 138-XXXX-XXXX</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-map-marker text-primary mr-3"></i>
+                                    <span>北京市海淀区</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fa-solid fa-briefcase text-primary mr-3"></i>
+                                    <span>市场营销经理</span>
+                                </div>
+                            </div>
+                            <a href="#contact" class="inline-block bg-primary text-white hover:bg-primary/90 px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
+                                联系我
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专业经历 -->
+        <section id="experience" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="font-title font-bold text-[clamp(1.75rem,4vw,2.5rem)] text-gray-800 mb-4">专业经历</h2>
+                        <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    </div>
+                    <div class="relative">
+                        <!-- 时间线 -->
+                        <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/30 transform md:-translate-x-1/2"></div>
+                        
+                        <!-- 经历项1 -->
+                        <div class="mb-12 relative">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <div class="md:w-1/2 md:pr-12 md:text-right mb-8 md:mb-0">
+                                    <div class="bg-white p-6 rounded-lg shadow-md hover-lift">
+                                        <h3 class="font-title font-bold text-xl text-gray-800 mb-2">ABC科技有限公司</h3>
+                                        <p class="text-primary font-medium mb-3">市场部高级专员</p>
+                                        <p class="text-gray-600 mb-4">2021.07 - 至今</p>
+                                        <ul class="text-gray-700 space-y-2">
+                                            <li class="flex items-start">
+                                                <i class="fa-solid fa-circle text-xs text-primary mt-1.5 mr-2"></i>
+                                                <span>策划并执行3场大型线上营销活动，带来客户增长40%，销售额提升25%。</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fa-solid fa-circle text-xs text-primary mt-1.5 mr-2"></i>
+                                                <span>主导社交媒体运营，粉丝量从5万增长至20万，互动率提升15%。</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fa-solid fa-circle text-xs text-primary mt-1.5 mr-2"></i>
+                                                <span>协调跨部门团队完成新品上市项目，提前1个月达成目标。</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="absolute left-0 md:left-1/2 w-6 h-6 bg-primary rounded-full transform md:-translate-x-1/2 border-4 border-white z-10"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 经历项2 -->
+                        <div class="mb-12 relative">
+                            <div class="flex flex-col md:flex-row items-center">
+                                <div class="md:w-1/2 md:pl-12 md:ml-auto">
+                                    <div class="bg-white p-6 rounded-lg shadow-md hover-lift">
+                                        <h3 class="font-title font-bold text-xl text-gray-800 mb-2">XYZ广告公司</h3>
+                                        <p class="text-primary font-medium mb-3">市场实习生</p>
+                                        <p class="text-gray-600 mb-4">2020.06 - 2021.06</p>
+                                        <ul class="text-gray-700 space-y-2">
+                                            <li class="flex items-start">
+                                                <i class="fa-solid fa-circle text-xs text-primary mt-1.5 mr-2"></i>
+                                                <span>协助完成客户市场调研报告，覆盖5000+样本，提案通过率90%。</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <i class="fa-solid fa-circle text-xs text-primary mt-1.5 mr-2"></i>
+                                                <span>管理日常社交媒体内容，撰写推文30+篇，平均阅读量提升20%。</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="absolute left-0 md:left-1/2 w-6 h-6 bg-primary rounded-full transform md:-translate-x-1/2 border-4 border-white z-10"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能 -->
+        <section id="skills" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="font-title font-bold text-[clamp(1.75rem,4vw,2.5rem)] text-gray-800 mb-4">技能</h2>
+                        <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <!-- 专业技能 -->
+                        <div>
+                            <h3 class="font-title font-bold text-xl text-gray-800 mb-6">专业技能</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium text-gray-700">市场调研</span>
+                                        <span class="text-primary font-medium">90%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium text-gray-700">SEO/SEM</span>
+                                        <span class="text-primary font-medium">85%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium text-gray-700">Google Analytics</span>
+                                        <span class="text-primary font-medium">88%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium text-gray-700">Hootsuite</span>
+                                        <span class="text-primary font-medium">82%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 82%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium text-gray-700">Photoshop</span>
+                                        <span class="text-primary font-medium">75%</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 语言能力与证书 -->
+                        <div>
+                            <h3 class="font-title font-bold text-xl text-gray-800 mb-6">语言能力与证书</h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium text-gray-700">英语（CET-6）</span>
+                                        <span class="text-primary font-medium">流利</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="font-medium text-gray-700">日语（N2）</span>
+                                        <span class="text-primary font-medium">中级</span>
+                                    </div>
+                                    <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div class="pt-4">
+                                    <h4 class="font-medium text-gray-800 mb-3">专业证书</h4>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 flex items-center">
+                                            <i class="fa-solid fa-certificate text-primary mr-3"></i>
+                                            <span>Google Ads认证</span>
+                                        </div>
+                                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 flex items-center">
+                                            <i class="fa-solid fa-certificate text-primary mr-3"></i>
+                                            <span>数字营销高级顾问（DMA）</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目展示 -->
+        <section id="projects" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="font-title font-bold text-[clamp(1.75rem,4vw,2.5rem)] text-gray-800 mb-4">项目展示</h2>
+                        <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- 项目1 -->
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover-lift">
+                            <div class="relative h-64">
+                                <img src="https://picsum.photos/id/1070/800/600" alt="绿色生活公益营销项目" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                                    <div class="p-6">
+                                        <h3 class="font-title font-bold text-xl text-white mb-1">“绿色生活”公益营销项目</h3>
+                                        <p class="text-white/80">项目经理 | 2023.03 - 2023.08</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-700 mb-4">联合5家品牌发起环保倡议，活动覆盖10万+用户，获媒体报道5次。</p>
+                                <ul class="text-gray-700 space-y-2 mb-6">
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>制定整体营销策略与执行计划</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>协调KOL合作与媒体资源对接</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fa-solid fa-check-circle text-primary mt-1 mr-2"></i>
+                                        <span>通过KOL合作实现公益筹款50万元，超额完成目标30%</span>
+                                    </li>
+                                </ul>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">营销策略</span>
+                                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">项目管理</span>
+                                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">KOL合作</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育背景 -->
+        <section id="education" class="py-20 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="font-title font-bold text-[clamp(1.75rem,4vw,2.5rem)] text-gray-800 mb-4">教育背景</h2>
+                        <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- 教育1 -->
+                        <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-primary hover-lift">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-title font-bold text-xl text-gray-800">北京大学</h3>
+                                    <p class="text-primary font-medium">工商管理硕士（MBA）</p>
+                                </div>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">2018.09 - 2021.06</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">主修课程：市场营销、战略管理、数据分析</p>
+                            <p class="text-gray-700 mb-4">GPA：3.8/4.0（专业前10%）</p>
+                            <div class="flex items-center mt-4">
+                                <img src="https://picsum.photos/id/1005/100/100" alt="北京大学" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <p class="font-medium text-gray-800">李明教授</p>
+                                    <p class="text-gray-600 text-sm">导师 | 市场营销系</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 教育2 -->
+                        <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-primary hover-lift">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="font-title font-bold text-xl text-gray-800">上海交通大学</h3>
+                                    <p class="text-primary font-medium">市场营销学士</p>
+                                </div>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">2014.09 - 2018.06</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">主修课程：市场营销原理、消费者行为、品牌管理、广告学</p>
+                            <div class="flex items-center mt-4">
+                                <img src="https://picsum.photos/id/1006/100/100" alt="上海交通大学" class="w-12 h-12 rounded-full object-cover mr-4">
+                                <div>
+                                    <p class="font-medium text-gray-800">王芳教授</p>
+                                    <p class="text-gray-600 text-sm">导师 | 市场营销系</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系方式 -->
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="font-title font-bold text-[clamp(1.75rem,4vw,2.5rem)] text-gray-800 mb-4">联系方式</h2>
+                        <div class="w-20 h-1 bg-primary mx-auto"></div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <h3 class="font-title font-bold text-xl text-gray-800 mb-6">联系我</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                        <i class="fa-solid fa-envelope text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">邮箱</h4>
+                                        <p class="text-gray-700">wuzhexiang@email.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                        <i class="fa-solid fa-phone text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">电话</h4>
+                                        <p class="text-gray-700">+86 138-XXXX-XXXX</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                        <i class="fa-solid fa-map-marker text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">地址</h4>
+                                        <p class="text-gray-700">北京市海淀区</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                        <i class="fa-solid fa-globe text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">个人博客</h4>
+                                        <p class="text-gray-700">www.wuzhexiangblog.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-8">
+                                <h4 class="font-medium text-gray-800 mb-4">社交媒体</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full transition-colors duration-300">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full transition-colors duration-300">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full transition-colors duration-300">
+                                        <i class="fa-brands fa-weixin"></i>
+                                    </a>
+                                    <a href="#" class="bg-primary/10 hover:bg-primary/20 text-primary p-3 rounded-full transition-colors duration-300">
+                                        <i class="fa-brands fa-weibo"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-title font-bold text-xl text-gray-800 mb-6">发送消息</h3>
+                            <form class="space-y-6">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">姓名</label>
+                                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-300" placeholder="您的姓名">
+                                    </div>
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">邮箱</label>
+                                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-300" placeholder="您的邮箱">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">主题</label>
+                                    <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-300" placeholder="消息主题">
+                                </div>
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">消息内容</label>
+                                    <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-300" placeholder="请输入您的消息..."></textarea>
+                                </div>
+                                <button type="submit" class="bg-primary text-white hover:bg-primary/90 px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1">
+                                    发送消息
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="font-title font-bold text-xl mb-4">毋喆祥</h3>
+                        <p class="text-gray-400 mb-4">市场营销经理</p>
+                        <p class="text-gray-400">专注于数字营销与品牌推广，擅长数据分析与创意策略结合，为企业带来可衡量的业务增长。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-lg mb-4">快速链接</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition-colors duration-300">关于我</a></li>
+                            <li><a href="#experience" class="text-gray-400 hover:text-white transition-colors duration-300">专业经历</a></li>
+                            <li><a href="#skills" class="text-gray-400 hover:text-white transition-colors duration-300">技能</a></li>
+                            <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors duration-300">项目展示</a></li>
+                            <li><a href="#education" class="text-gray-400 hover:text-white transition-colors duration-300">教育背景</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors duration-300">联系方式</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-lg mb-4">联系信息</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-envelope text-primary mr-2"></i>
+                                <span class="text-gray-400">wuzhexiang@email.com</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-phone text-primary mr-2"></i>
+                                <span class="text-gray-400">+86 138-XXXX-XXXX</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-map-marker text-primary mr-2"></i>
+                                <span class="text-gray-400">北京市海淀区</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                    <i class="fa-brands fa-weixin"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                                    <i class="fa-brands fa-weibo"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                    <p>&copy; 2025 毋喆祥. 保留所有权利.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 z-50">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('bg-white/90');
+                navbar.classList.add('bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 关闭移动端菜单（如果打开）
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    
+                    // 平滑滚动到目标位置
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 回到顶部按钮
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 元素进入视口时的动画效果
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.hover-lift');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                
+                // 元素进入视口时添加动画
+                if (elementTop < window.innerHeight - 100 && elementBottom > 0) {
+                    element.classList.add('opacity-100', 'translate-y-0');
+                    element.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        };
+        
+        // 初始设置
+        document.querySelectorAll('.hover-lift').forEach(element => {
+            element.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+        });
+        
+        // 滚动时检查元素
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // 初始检查
+        animateOnScroll();
+    </script>
+</body>
+</html>
+    
